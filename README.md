@@ -33,7 +33,7 @@
 |phone_number|integer|null: false|
 |postal_code|integer||
 |prefectures|string|null: false|
-|municipality|string|null:f alse|
+|municipality|string|null: false|
 |address|string|null: false|
 |building_name|string||
 
