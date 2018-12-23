@@ -98,33 +98,33 @@
 | --- | --- | --- |
 |genre|string||
 # Association
- - belongs_to :items
+ - belongs_to :item
 
 ## category_m table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
 # Association
- - belongs_to :items
+ - belongs_to :item
 
 ## category_s table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
 # Association
- - belongs_to :items
+ - belongs_to :item
 
 ## brand table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
 # Association
- - belongs_to :items
+ - belongs_to :item
 
 ## size table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
 # Association
- - belongs_to :items
+ - belongs_to :item
 
