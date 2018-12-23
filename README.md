@@ -20,13 +20,13 @@
 |evaluation_m|integer||
 |evaluation_s|integer||
 
-# Association
- - has_many :items
+### Association
+ - has_many :items, through :histories
  - has_many :comments
  - has_one :credit_cards
  - has_one :address
 
-## address table
+## addresses table
 |Column|Type|Options|
 | --- | --- | --- |
 |user_id|references|foreign_key: true|
@@ -37,7 +37,7 @@
 |address|string|null: false|
 |building_name|string||
 
-# Association
+### Association
 - belongs_to :user
 
 ## credit_cards table
@@ -49,7 +49,7 @@
 |expiration_year|integer|null: false|
 |user_id|references|foreign_key: true|
 
-# Association
+### Association
  - belongs_to :user
 
 ## items table
@@ -73,14 +73,26 @@
 |seller_id|references|class_name: "User", foreign_key: true|
 |buyer_id|references|class_name: "User", foreign_key: true|
 
-# Association
+### Association
  - belongs_to :user
  - has_many :comments
+ - has_one :history
  - has_one :category_l
  - has_one :category_m
  - has_one :category_s
  - has_one :size
  - has_one :brand
+
+## historeis table
+|Column|Type|Options|
+| --- | --- | --- |
+|item_id|references|foreign_key :true|
+|seller_id|integer||
+|buyer_id|integer||
+
+### Association
+ - belongs_to :item
+ - belogsn_to :user
 
 ## comments table
 |Column|Type|Options|
@@ -89,7 +101,7 @@
 |item_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 
-# Association
+### Association
 - belongs_to :item
 - belongs_to :user
 
@@ -97,34 +109,39 @@
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
-# Association
+|item_id|references|foreign_key: true|
+### Association
  - belongs_to :item
 
 ## category_m table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
-# Association
+|item_id|references|foreign_key: true|
+### Association
  - belongs_to :item
 
 ## category_s table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
-# Association
+|item_id|references|foreign_key: true|
+### Association
  - belongs_to :item
 
 ## brand table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
-# Association
+|item_id|references|foreign_key: true|
+### Association
  - belongs_to :item
 
 ## size table
 |Column|Type|Options|
 | --- | --- | --- |
 |genre|string||
-# Association
+|item_id|references|foreign_key: true|
+### Association
  - belongs_to :item
 
